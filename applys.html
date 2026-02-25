@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply | Al-Hassan Institute</title>
+<style>
+body { font-family:'Segoe UI',sans-serif; background: linear-gradient(to bottom,#f9f9f9,#eef2f3); margin:0; color:#2c3e50; }
+header { background: linear-gradient(135deg,#0b5d2a,#137a3a); padding:25px 20px 15px; color:white; text-align:center; border-bottom:4px solid #d4af37; }
+header h1 { margin:0; font-size:2.2em; }
+header p { font-style:italic; color:#f1c40f; margin-top:5px; font-size:1em; }
+nav { background:#0f7a38; padding:12px; text-align:center; }
+nav a { color:white; margin:10px; text-decoration:none; font-weight:bold; }
+nav a:hover { color:#d4af37; text-decoration:underline; }
+.container { max-width:700px; margin:40px auto; background:white; padding:40px; border-radius:16px; box-shadow:0 0 25px rgba(0,0,0,0.08); }
+h2 { color:#0b5d2a; margin-bottom:20px; border-bottom:3px solid #d4af37; padding-bottom:8px; }
+.form-group { margin-bottom:15px; }
+label { display:block; margin-bottom:5px; font-weight:bold; }
+input, textarea { width:100%; padding:12px; border-radius:6px; border:1px solid #ccc; font-size:15px; }
+textarea { resize:vertical; }
+button { padding:12px 25px; background: linear-gradient(135deg,#d4af37,#f1c40f); color:#0b5d2a; font-weight:bold; border:none; border-radius:25px; cursor:pointer; }
+button:hover { transform:translateY(-2px); }
+footer { background: linear-gradient(135deg,#0b5d2a,#0f7a38,#0b5d2a); color:white; font-size:0.85em; padding:14px 20px; border-top:4px solid #d4af37; text-align:center; box-shadow:0 -3px 15px rgba(0,0,0,0.15); margin-top:40px; }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+<p>Discovering Understanding & Healing</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="programs.html">Programs</a>
+<a href="short-courses.html">Short Courses</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+<h2>Apply for Program</h2>
+
+<form id="applicationForm">
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" name="name" required>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input type="email" name="email" required>
+</div>
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" name="phone">
+</div>
+<div class="form-group">
+<label>Program</label>
+<input type="text" name="program" id="programInput" readonly>
+</div>
+<div class="form-group">
+<label>Message</label>
+<textarea name="message" rows="4"></textarea>
+</div>
+<button type="submit">Submit Application</button>
+</form>
+</div>
+
+<footer>
+© 2026 Al-Hassan Institute of Health Sciences – Yumbe, Uganda
+</footer>
+
+<script>
+// Prefill program from URL
+const params = new URLSearchParams(window.location.search);
+const programInput = document.getElementById('programInput');
+if (params.get('program')) programInput.value = params.get('program');
+
+// Form submission handling
+document.getElementById('applicationForm').addEventListener('submit', function(e){
+  e.preventDefault(); // prevent real submission
+  // simulate saving application
+  alert('Application Submitted Successfully!');
+  // redirect back to programs page with success notification
+  window.location.href = 'programs.html?status=success';
+});
+</script>
+
+</body>
+</html>

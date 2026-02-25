@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Latest News – Al-Hassan Institute of Health Sciences</title>
+<style>
+/* ===== Reset & Base ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  background: #f9f9f9;
+  color: #2c3e50;
+  scroll-behavior: smooth;
+}
+
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 4px solid #d4af37;
+  color: white;
+}
+.header-logo {
+  position: absolute;
+  top: 6px; left: 0;
+  width: 100px; height: 100px;
+}
+.header-logo svg { width: 100%; height: 100%; }
+
+/* Header text */
+header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+}
+header .slogan { font-size: 1.1em; color: #d4af37; font-style: italic; margin-bottom: 10px; }
+
+/* Top Right Section */
+.top-right { position: absolute; top: 5px; right: 10px; display: flex; flex-direction: column; align-items: flex-end; }
+.datetime { font-size: 0.75em; color: white; margin-top: 4px; }
+.search-box { display: flex; gap: 2px; }
+.search-box input { padding: 6px 10px; border-radius: 20px 0 0 20px; border: none; outline: none; }
+.search-box button {
+  padding: 6px 12px; border-radius: 0 20px 20px 0;
+  border: none; background: linear-gradient(135deg, #d4af37, #f1c40f);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.search-box button svg { width: 18px; height: 18px; fill: #0b5d2a; }
+
+/* Navigation */
+.menu { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; }
+.menu li { position: relative; margin: 0 10px; }
+.menu a { color: white; text-decoration: none; padding: 10px 8px; border-radius: 6px; transition: all 0.3s ease; }
+.menu a:hover { background: linear-gradient(135deg, #d4af37, #f1c40f); color: #0b5d2a; }
+
+/* Dropdown */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0b5d2a; min-width: 200px; border-radius: 8px; flex-direction: column; padding: 8px 0; z-index: 1000; }
+.dropdown:hover > .dropdown-content { display: flex; flex-direction: column; }
+.dropdown-content a { padding: 10px 20px; color: #f1c40f; font-size: 0.95em; }
+.dropdown-content a:hover { background: rgba(212,175,55,0.15); color: #fff; }
+
+/* ===== Slideshow ===== */
+.slideshow-wrapper { position: relative; max-width: 1000px; margin: 30px auto; border: 2px solid #d4af37; border-radius: 10px; overflow: hidden; height: 450px; }
+#slideshow img { width: 100%; height: 100%; object-fit: cover; }
+.slide-overlay { position: absolute; bottom: 20px; left: 20px; color: #FFC107; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 5px; }
+.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); border: none; font-size: 2rem; padding: 0.3rem 0.6rem; cursor: pointer; z-index: 10; border-radius: 3px; display: flex; align-items: center; justify-content: center; }
+.slide-btn svg { width: 24px; height: 24px; fill: #fff; }
+.slide-btn.prev { left: 10px; }
+.slide-btn.next { right: 10px; }
+
+/* ===== News Grid ===== */
+.news-container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.news-card { background: #fff; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.news-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(212,175,55,0.3); }
+.news-card img { width: 100%; height: 200px; object-fit: cover; }
+.news-card .news-content { padding: 15px; }
+.news-card h3 { font-size: 1.3em; margin-bottom: 10px; color: #0b5d2a; }
+.news-card p { font-size: 0.95em; color: #555; margin-bottom: 10px; }
+.news-card a { display: inline-flex; align-items: center; text-decoration: none; color: #0b5d2a; font-weight: bold; gap: 5px; }
+.news-card a svg { width: 16px; height: 16px; fill: #0b5d2a; }
+
+/* ===== Footer ===== */
+footer { padding: 15px; font-size: 0.78em; border-top: 3px solid #d4af37; background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a); color: #fff; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- Logo as SVG -->
+  <div class="header-logo">
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="256" cy="256" r="240" stroke="#0b5d2a" stroke-width="16" fill="#fff"/>
+      <path d="M256 80 L256 432 M80 256 L432 256" stroke="#d4af37" stroke-width="16" />
+    </svg>
+  </div>
+
+  <h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+  <div class="slogan">Discovering, Understanding and Healing</div>
+
+  <div class="top-right">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search news...">
+      <button>
+        <!-- Magnifying glass SVG -->
+        <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
+      </button>
+    </div>
+    <div class="datetime" id="dateTimeDisplay"></div>
+  </div>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown"><a href="#">About Us</a>
+        <ul class="dropdown-content">
+          <li><a href="index.html#overview">Overview</a></li>
+          <li><a href="index.html#history">History</a></li>
+          <li><a href="index.html#mission">Mission & Vision</a></li>
+        </ul>
+      </li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="admission-requirements.html">Admissions</a></li>
+      <li><a href="#">News & Events</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Featured News Slideshow -->
+<div class="slideshow-wrapper">
+  <div id="slideshow"></div>
+  <div class="slide-overlay">
+    <h2>Featured News</h2>
+    <p>Catch up on our latest announcements and events happening at Al-Hassan Institute</p>
+  </div>
+  <button class="slide-btn prev">
+    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="slide-btn next">
+    <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+</div>
+
+<!-- News Grid -->
+<div class="news-container" id="newsContainer"></div>
+
+<footer>
+  © 2026 Al-Hassan Institute of Health Sciences – Yumbe, Uganda | All rights reserved.
+</footer>
+
+<script>
+// ===== DateTime =====
+function updateDateTime() {
+  const dt = new Date();
+  document.getElementById('dateTimeDisplay').textContent = dt.toLocaleString();
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+// ===== Slideshow =====
+let slideIndex = 0;
+let slides = [];
+function showSlide(n) { slides.forEach((s,i) => s.style.display = (i===n)? 'block':'none'); }
+function nextSlide() { slideIndex = (slideIndex+1)%slides.length; showSlide(slideIndex); }
+function prevSlide() { slideIndex = (slideIndex-1+slides.length)%slides.length; }
+document.querySelector('.slide-btn.next').onclick = nextSlide;
+document.querySelector('.slide-btn.prev').onclick = prevSlide;
+
+// ===== Load News from JSON =====
+const newsData = [
+  { "title": "New Health Program Launched", "summary": "The institute has introduced a cutting-edge public health program.", "image": "news1.jpg", "featured": true, "link": "#" },
+  { "title": "Annual Graduation Ceremony", "summary": "Students celebrated their achievements in a ceremony attended by faculty and leaders.", "image": "news2.jpg", "featured": true, "link": "#" },
+  { "title": "Workshop on Advanced Nursing", "summary": "Our faculty hosted an international workshop to enhance nursing skills.", "image": "news3.jpg", "featured": false, "link": "#" },
+  { "title": "Medical Camp Initiative", "summary": "A community medical camp was organized for free health screening.", "image": "news4.jpg", "featured": false, "link": "#" }
+];
+
+const slideshowDiv = document.getElementById('slideshow');
+const newsContainer = document.getElementById('newsContainer');
+
+newsData.forEach(item => {
+  // Slideshow featured
+  if(item.featured){
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+    slideshowDiv.appendChild(img);
+  }
+  // News card
+  const card = document.createElement('div');
+  card.className = 'news-card';
+  card.innerHTML = `
+    <img src="${item.image}" alt="${item.title}">
+    <div class="news-content">
+      <h3>${item.title}</h3>
+      <p>${item.summary}</p>
+      <a href="${item.link}">Read More 
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  `;
+  newsContainer.appendChild(card);
+});
+
+// Initialize slideshow after news loaded
+slides = document.querySelectorAll('#slideshow img');
+showSlide(slideIndex);
+setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>

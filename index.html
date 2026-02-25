@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Al-Hassan Institute of Health Science – Yumbe UG LTD</title>
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  background: linear-gradient(to bottom, #f9f9f9, #eef2f3);
+  color: #2c3e50;
+  scroll-behavior: smooth;
+}
+ /* ===== PROFESSIONAL ISLAMIC ELEGANT HEADER ===== */
+
+header {
+  position: relative;
+  background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 15px 10px 15px; /* reduced padding */
+  border-bottom: 4px solid #d4af37;
+  
+  justify-content: space-between;
+
+  color: white;
+}
+
+/* Subtle Islamic pattern overlay */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(212,175,55,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.4;
+  pointer-events: none;
+   z-index: 1000; /* less than logo */
+}
+
+/* ===== LOGO STYLING ===== */
+
+.header-logo {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 0 15px rgba(212,175,55,0.6);
+  z-index: 1010; /* higher than header::before (overlay) */
+  transition: transform 0.3s ease;
+}
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Welcome section logo size control */
+.welcome-logo {
+  width: 250px;        /* adjust size here */
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+}
+/* ===== TITLE STYLING ===== */
+
+header h1 {
+  font-size: 2.3em;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+
+  text-shadow:
+    0 0 5px rgba(212,175,55,0.6),
+    0 0 10px rgba(212,175,55,0.4),
+    0 2px 4px rgba(0,0,0,0.4);
+
+  animation: fadeSlideDown 1.2s ease;
+}
+
+/* Optional slogan styling */
+header .slogan {
+  font-size: 1.2em;
+  color: #d4af37;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+  text-shadow: 0 0 8px rgba(212,175,55,0.6);
+}
+
+/* ===== TOP RIGHT SECTION ===== */
+
+.top-right {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  top: 0%;
+  right: 12px;
+  gap: 2px;
+}
+
+/* DateTime styling */
+.datetime {
+  font-size: 0.55em;
+  color: white;
+  font-weight: 0;
+}
+
+/* ===== SEARCH BOX ===== */
+
+.search-box input {
+  border: none;
+  outline: none;
+  border-radius: 20px 0 0 20px;
+  padding: 6px 10px;
+  font-size: 0.85em;
+}
+
+.search-box button {
+  background: linear-gradient(135deg, #d4af37, #f1c40f);
+  color: #0b5d2a;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+   font-size: 0.85em;
+}
+
+.search-box button:hover {
+  background: linear-gradient(135deg, #f1c40f, #d4af37);
+  transform: scale(1.05);
+}
+
+/* Navigation styles */
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  gap: 6px;
+}
+.menu li {
+  position: relative;
+  margin: 0 10px;
+}
+/* Make menu stack on small screens */
+@media(max-width: 768px){
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Hidden by default in mobile, toggled by JS */
+  }
+  .menu.show {
+    display: flex;
+  }
+  .menu li {
+    margin: 5px 0;
+  }
+}
+/* ===== NAVIGATION ===== */
+
+nav {
+  margin-top: 12px;
+}
+
+.menu a {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 10px 8px;
+  display: block;
+  padding: 10px 8px;
+  font-size: 13px;
+}
+.menu a:hover {
+  background: linear-gradient(135deg, #d4af37, #f1c40f);
+  color: #0b5d2a;
+  box-shadow: 0 0 10px rgba(212,175,55,0.6);
+}
+
+
+
+/* Show menu */
+.mega-parent:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Columns */
+.mega-menu { padding: 20px; border-radius: 8px; position: absolute; top: 100%; left: 0; width: 800px;  background-color: rgba(79, 197, 118, 0.95); /* dark green overlay */; border-top: 4px solid #caa64d; box-shadow: 0 20px 60px rgba(0,0,0,0.15); padding: 20px; display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; opacity:0; visibility:hidden; transform:translateY(15px); transition: all 0.3s ease; z-index:999; }
+.mega-parent:hover .mega-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.mega-column { padding-right: 15px; border-right: 1px solid #eee; }
+.mega-column:last-child { border-right: none; }
+.mega-column h4 { font-size: 17px; margin-bottom: 12px; color: #0b5d2a; font-weight: 700; }
+.mega-column a { display: block; padding: 10px 12px; color: #333; font-size: 15px; text-decoration: none; border-radius: 6px; transition: all 0.25s ease; }
+.mega-column a:hover { background: #0b5d2a; color: white; transform: translateX(5px); }
+.highlight-column { background: #f8fdf9; padding: 15px; border-radius: 8px; color: #0b5d2a; }
+
+
+/* Title visibility */
+.mega-title {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+
+@media(max-width:768px){
+
+  header h1{
+    font-size: 1.7em;
+    padding: 0 60px;
+  }
+
+  .header-logo{
+    width: 70px;
+    height: 70px;
+  }
+
+  .top-right{
+    position: static;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
+/* Dropdown */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 220px; background-color: #0b5d2a; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.25); flex-direction: column; padding: 8px 0; z-index: 1000; transition: all 0.3s ease-in-out; opacity: 0; transform: translateY(10px); }
+.dropdown:hover > .dropdown-content { display: flex; flex-direction: column; opacity: 1; transform: translateY(0); }
+.dropdown-content a { padding: 10px 20px; color: #f1c40f; text-decoration: none; font-weight: 500; font-size: 0.95em; transition: all 0.25s ease; }
+.dropdown-content a:hover { background: linear-gradient(90deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05)); color: #ffffff; transform: translateX(4px); box-shadow: inset 0 0 8px rgba(212,175,55,0.3); }
+.dropdown-content a:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+.container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(212,175,55,0.15);
+
+  position: relative;
+}
+
+/* Subtle gold top accent */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+/* Responsive padding */
+@media(max-width: 768px){
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+}
+
+section {
+  margin-bottom: 40px;   /* reduced from 70px */
+  padding-bottom: 20px;  /* reduced from 40px */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  animation: fadeInUp 0.8s ease;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #0b5d2a;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Gold underline accent */
+h2::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(to right, #d4af37, transparent);
+}
+h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #137a3a;
+  font-weight: 600;
+}
+p {
+  font-size: 1.08em;
+  margin-bottom: 20px;
+  color: #555;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+img {
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+/* Organization info block */
+.org-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.org-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.detail-item {
+  flex: 1 1 45%;
+}
+.detail-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+/* Footer matching header theme */
+footer {
+ padding: 10px 15px; /* smaller padding */
+  font-size: 0.78em;
+  border-top: 3px solid #d4af37;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+  bottom: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a); /* same gradient as header */
+  color: #ffffff;
+  font-size: 0.85em;
+  border-top: 3px solid #d4af37; /* gold border like header bottom */
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.footer-section {
+  line-height: 1.2;
+}
+
+.footer-section a {
+  color: #d4af37; /* gold links for header consistency */
+  text-decoration: none;
+  margin: 0 4px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #d4af37;
+}
+
+.social-icons a svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 4px #d4af37);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.7em;
+  border-top: 1px solid rgba(212,175,55,0.5);
+  padding-top: 4px;
+  color: #f5f5f5;
+}
+
+/* Mobile adjustments (more compact) */
+@media(max-width:480px){
+  header h1 { font-size: 1.6em; }
+  header .slogan { font-size: 0.95em; }
+  .search-box input { font-size: 0.8em; padding: 5px 8px; }
+  .search-box button { font-size: 0.8em; padding: 5px 8px; }
+  .menu a { padding: 6px 8px; font-size: 0.85em; }
+  footer { font-size: 0.7em; padding: 8px 10px; }
+  .social-icons a svg { width: 12px; height: 12px; }
+}
+.btn-gold {
+  display: inline-block;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #d4af37, #f1c40f);
+  color: #0b5d2a;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.4);
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(212,175,55,0.6);
+}
+#slideshow {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  border: 3px solid #d4af37;
+}
+/* Additional responsiveness for smaller devices */
+@media(max-width: 480px){
+  header h1 {
+    font-size: 2em; /* Reduce header font size for small screens */
+  }
+  .search-box input[type="text"] {
+    font-size: 0.9em;
+  }
+  .search-box button {
+    padding: 6px 10px;
+  }
+  section {
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
+}
+/* Comment Section */
+.comment-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.comment-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.comment {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #d4af37;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.comment-name {
+  font-weight: bold;
+  color: #0b5d2a;
+}
+
+.comment-date {
+  font-size: 0.85em;
+  color: gray;
+}
+
+.comment-text {
+  margin-top: 8px;
+}
+/* Compact Programs Grid */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.program-category {
+  background: #f9f9f9;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 4px solid #d4af37;
+}
+
+.program-category h3 {
+  margin-bottom: 10px;
+  color: #0b5d2a;
+}
+
+.program-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.program-list li {
+  margin-bottom: 6px;
+}
+
+.program-list a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.program-list a:hover {
+  color: #0b5d2a;
+  padding-left: 5px;
+}
+.slideshow-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 40px auto;
+  border: 2px solid #FFC107;
+  border-radius: 10px;
+  overflow: hidden;
+  
+  /* Make height relative to viewport minus header/footer */
+  height: calc(100vh - 180px); /* adjust 180px based on your header+footer height */
+}
+
+#slideshow,
+#facilities-slideshow {
+  width: 100%;
+  height: 100%;
+}
+
+#slideshow img,
+#slideshow video,
+#facilities-slideshow img,
+#facilities-slideshow video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+@keyframes fade {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* Overlay Text */
+.slide-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  background: rgba(0,0,0,0.45);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+.slide-overlay h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #f1c40f;
+}
+
+.slide-overlay p {
+  margin-top: 5px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Navigation buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.slide-btn:hover {
+  background: #0b5d2a;
+}
+
+.slideshow-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid #FFC107; /* Gold border */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#facilities-slideshow img,
+#facilities-slideshow video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 3px;
+}
+
+.slide-btn.prev {
+  left: 10px;
+}
+
+.slide-btn.next {
+  right: 10px;
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #FFC107;
+  z-index: 5;
+  background: rgba(0,0,0,0.5);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.slide-overlay h2 {
+  margin: 0 0 5px;
+}
+
+.slide-overlay p {
+  margin: 0;
+  color: #fff;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="Logo 5.png" alt="Logo" class="header-logo" />
+
+  <h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+
+  <!-- Hamburger Menu Icon for mobile -->
+  <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Top right search and datetime -->
+  <div class="top-right">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button onclick="alert('Search functionality to be implemented')">Search</button>
+    </div>
+    <div class="datetime" id="dateTimeDisplay"></div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav>
+    <ul class="menu" id="mainMenu">
+
+      <li><a href="#home">Home</a></li>
+
+      <!-- About -->
+      <li class="dropdown">
+        <a href="#">About Us</a>
+        <ul class="dropdown-content">
+          <li><a href="#about">Overview</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#mission">Mission & Vision</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+        </ul>
+      </li>
+
+      <!-- Academic Programs -->
+    <li class="dropdown mega-parent">
+  <a href="#" class="mega-title">Academic Programs ▾</a>
+
+    <div class="mega-menu" style="background-color: rgba(11,93,42,0.95); border-radius:6px; padding:12px;">
+
+    <div class="mega-column">
+      <h4 style="font-size:14px; font-weight:400; color:#d4af37; margin-bottom:8px;">Diploma Programs</h4>
+      <a href="diploma-nursing.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">🩺 Diploma in Nursing</a>
+      <a href="diploma-midwifery.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">👶 Diploma in Midwifery</a>
+      <a href="diploma-clinical-medicine.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">🏥 Clinical Medicine</a>
+      <a href="diploma-pharmacy.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">💊 Diploma in Pharmacy</a>
+    </div>
+
+    <div class="mega-column">
+      <h4 style="font-size:14px; font-weight:400; color:#d4af37; margin-bottom:8px;">Certificate Programs</h4>
+      <a href="certificate-nursing.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">🩺 Certificate in Nursing</a>
+      <a href="certificate-midwifery.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">👶 Certificate in Midwifery</a>
+      <a href="certificate-pharmacy.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">💊 Certificate in Pharmacy</a>
+      <a href="certificate-labtech.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">🔬 Laboratory Technology</a>
+    </div>
+
+    <div class="mega-column highlight-column" style="background:#f8fdf9; padding:8px; border-radius:6px;">
+      <h4 style="font-size:14px; font-weight:400; color:#0b5d2a; margin-bottom:8px;">Special Programs</h4>
+      <a href="short-courses.html" class="mega-link" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">📘 Short Courses</a>
+      <a href="internship-programs.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">🎓 Internship Programs</a>
+      <a href="community-outreach.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">🌍 Community Outreach</a>
+      <a href="professional-development.html" style="display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">📈 Professional Development</a>
+    </div>
+
+</div>
+</li>
+
+      <!-- Admissions -->
+     <li class="dropdown">
+  <a href="#">Admissions</a>
+  <ul class="dropdown-content">
+    <li><a href="admission-requirements.html">Admission Requirements</a></li>
+    <li><a href="fees-structure.html">Fees Structure</a></li>
+    <li><a href="how-to-apply.html">How to Apply</a></li>
+    <li><a href="apply.html">Online Application Portal</a></li>
+  </ul>
+</li>
+
+      <!-- News & Events -->
+     <!-- News & Events Mega Menu -->
+<li class="dropdown">
+  <a href="#">News & Events</a>
+  <ul class="dropdown-content" style="min-width:250px; padding:8px; background:#0b5d2a; border-radius:6px;">
+    <li>
+      <a href="latest-news.html" style="display:flex; align-items:center; gap:8px; color:#fff; padding:6px 10px; border-radius:4px; text-decoration:none;">
+        <!-- News SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M2 2h12v2H2V2zm0 4h12v2H2V6zm0 4h12v2H2v-2z"/>
+        </svg>
+        Latest News
+      </a>
+    </li>
+    <li>
+      <a href="upcoming-events.html" style="display:flex; align-items:center; gap:8px; color:#fff; padding:6px 10px; border-radius:4px; text-decoration:none;">
+        <!-- Events SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1.5A1.5 1.5 0 0 1 16 2.5v11A1.5 1.5 0 0 1 14.5 15h-13A1.5 1.5 0 0 1 0 13.5v-11A1.5 1.5 0 0 1 1.5 1H3V.5a.5.5 0 0 1 .5-.5zM1 5v8.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V5H1z"/>
+        </svg>
+        Upcoming Events
+      </a>
+    </li>
+    <li>
+      <a href="announcements.html" style="display:flex; align-items:center; gap:8px; color:#fff; padding:6px 10px; border-radius:4px; text-decoration:none;">
+        <!-- Announcement SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm1 12H7v-2h2zm0-4H7V4h2z"/>
+        </svg>
+        Announcements
+      </a>
+    </li>
+    <li>
+      <a href="academic-calendar.html" style="display:flex; align-items:center; gap:8px; color:#fff; padding:6px 10px; border-radius:4px; text-decoration:none;">
+        <!-- Calendar SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1.5A1.5 1.5 0 0 1 16 2.5v11A1.5 1.5 0 0 1 14.5 15h-13A1.5 1.5 0 0 1 0 13.5v-11A1.5 1.5 0 0 1 1.5 1H3V.5a.5.5 0 0 1 .5-.5zM1 5v8.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V5H1z"/>
+        </svg>
+        Academic Calendar
+      </a>
+    </li>
+  </ul>
+</li>
+
+   <!-- Research Dropdown -->
+<li class="dropdown mega-parent">
+  <a href="#" class="mega-title">Research ▾</a>
+  <div class="mega-menu" style="background-color: rgba(11,93,42,0.95); border-radius:6px; padding:12px; width: 700px;">
+    
+    <!-- Publications -->
+    <div class="mega-column">
+      <h4 style="font-size:14px; font-weight:400; color:#d4af37; margin-bottom:8px;">Publications</h4>
+      <a href="latest-publications.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        📝 Latest Publications
+      </a>
+      <a href="research-reports.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        📄 Research Reports
+      </a>
+    </div>
+
+    <!-- Research Journals -->
+    <div class="mega-column">
+      <h4 style="font-size:14px; font-weight:400; color:#d4af37; margin-bottom:8px;">Research Journals</h4>
+      <a href="published-journals.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        📚 Published Journals
+      </a>
+      <a href="journal-archive.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        🗂 Journal Archive
+      </a>
+    </div>
+
+    <!-- Projects & Faculty -->
+    <div class="mega-column highlight-column" style="background:#f8fdf9; padding:12px; border-radius:6px;">
+      <h4 style="font-size:14px; font-weight:400; color:#0b5d2a; margin-bottom:8px;">Research Projects & Faculty</h4>
+      <a href="ongoing-projects.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        🔬 Ongoing Projects
+      </a>
+      <a href="faculty-research.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        👩‍🔬 Faculty Research
+      </a>
+      <a href="research-collaborations.html" style="display:block; padding:6px 10px; font-size:13px; font-weight:300; color:#0b5d2a; text-decoration:none; border-radius:4px; transition:all 0.2s;">
+        🌍 Collaborations
+      </a>
+    </div>
+
+  </div>
+</li>
+
+     <!-- Alumni -->
+<li class="dropdown">
+  <a href="#">Alumni ▾</a>
+  <ul class="dropdown-content">
+    <li><a href="alumni-directory.html">Alumni Directory</a></li>
+    <li><a href="alumni-testimonials.html">Testimonials</a></li>
+    <li><a href="alumni-success-stories.html">Success Stories</a></li>
+    <li><a href="alumni-register.html">Register as Alumni</a></li>
+  </ul>
+</li>
+      <!-- Campus -->
+      <li><a href="#facilities">Campus & Facilities</a></li>
+
+      <!-- Faculty -->
+      <li><a href="staff.html">Faculty & Staff</a></li>
+
+      <!-- Contact -->
+      <li><a href="#contact">Contact Us</a></li>
+
+    </ul>
+  </nav>
+
+</header>
+  
+<div class="container" id="home">
+
+  <!-- Date & Time Bar -->
+<div class="datetime-bar">
+  <div class="datetime" id="dateTimeDisplay"></div>
+</div>
+
+  <!-- Welcome / Overview -->
+ <section id="overview">
+  <h2>Welcome to Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h2>
+  <p>
+    We are committed to providing excellent health education and training to meet the healthcare needs of Uganda and beyond. Our institute offers a variety of diploma and certificate programs in health sciences, equipping students with practical skills and knowledge to serve their communities.
+  </p>
+  
+   <div class="slideshow-wrapper">
+
+  <div id="slideshow"></div>
+
+  <!-- Overlay Text -->
+  <div class="slide-overlay">
+    <h2>Campus Facilities</h2>
+    <p>Explore our modern classrooms, laboratories, and learning environment</p>
+  </div>
+
+  <!-- Navigation buttons -->
+  <button class="slide-btn prev">&#10094;</button>
+  <button class="slide-btn next">&#10095;</button>
+
+</div>
+</section>
+
+  <!-- About Us -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>The Al-Hassan Institute of Health Sciences is a leading training institution in Yumbe, Uganda, dedicated to producing qualified health professionals. Our mission is to improve community health through quality education, research, and community engagement.</p>
+  </section>
+
+  <!-- History -->
+  <section id="history">
+    <h2>Our History</h2>
+    <p>Founded in 2026, our institute has rapidly grown to become a center of excellence for health education in the region. We collaborate with local health authorities and international partners to enhance our curriculum and facilities.</p>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section id="mission">
+    <h2>Mission & Vision</h2>
+    <h3>Our Mission</h3>
+    <p>To provide accessible, accredited, and community-responsive health sciences education that equips youth with practical skills, ethical values, and professional competence, strengthening the health workforce and improving healthcare service delivery in Yumbe District and the wider West Nile region</p>
+    <h3>Our Vision</h3>
+    <p>A healthy and resilient society where underserved and refugee-hosting communities have equitable access to quality healthcare delivered by skilled, ethical, and locally trained health professionals</p>
+  </section>
+
+  <!-- Leadership -->
+  <section id="leadership">
+    <h2>Our Leadership</h2>
+    <p>Meet our dedicated team of administrators and faculty committed to excellence in education.</p>
+  </section>
+
+  <!-- Admissions -->
+  <section id="admissions">
+    <h2>Admissions</h2>
+    <p>Applications are open for the upcoming academic year. Please review our admission requirements and apply online or visit our campus.</p>
+    <ul>
+      <li>Application deadline: March 15, 2026</li>
+      <li>Requirements: High school diploma, relevant qualifications, & application fee</li>
+    </ul>
+    <a href="#apply" class="btn-gold">Apply Now</a>
+  </section>
+
+  <!-- Academic Programs -->
+<section id="programs">
+  <h2>Academic Programs & Campus Facilities</h2>
+
+  <div class="programs-grid">
+
+    <!-- Diploma Programs -->
+    <div class="program-category">
+      <h3>Diploma Programs</h3>
+      <ul class="program-list">
+        <li><a href="diploma-nursing.html">Diploma in Nursing</a></li>
+        <li><a href="diploma-midwifery.html">Diploma in Midwifery</a></li>
+        <li><a href="diploma-clinical-medicine.html">Diploma in Clinical Medicine & Community Health</a></li>
+        <li><a href="diploma-pharmacy.html">Diploma in Pharmacy</a></li>
+        <li><a href="diploma-labtech.html">Diploma in Laboratory Technology</a></li>
+      </ul>
+    </div>
+
+    <!-- Certificate Programs -->
+    <div class="program-category">
+      <h3>Certificate Programs</h3>
+      <ul class="program-list">
+        <li><a href="certificate-nursing.html">Certificate in Nursing</a></li>
+        <li><a href="certificate-midwifery.html">Certificate in Midwifery</a></li>
+        <li><a href="certificate-clinical-medicine.html">Certificate in Clinical Medicine & Community Health</a></li>
+        <li><a href="certificate-pharmacy.html">Certificate in Pharmacy</a></li>
+        <li><a href="certificate-labtech.html">Certificate in Laboratory Technology</a></li>
+      </ul>
+    </div>
+    <!-- Special Programs -->
+    <div class="program-category">
+      <h3>Special Programs</h3>
+      <ul class="program-list">
+        <li><a href="short-courses.html">Short courses</a></li>
+        <li><a href="internship-programs.html">Internship Programs</a></li>
+        <li><a href="community-outreach.html">Community Outreach Programs</a></li>
+        <li><a href="professional-development.html">Professional Development Programs</a></li>
+        
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- Campus & Facilities Section -->
+<section id="facilities">
+  <div class="slideshow-wrapper">
+    <!-- Slideshow container -->
+    <div id="facilities-slideshow"></div>
+
+    <!-- Overlay Text -->
+    <div class="slide-overlay">
+      <h2>Campus Facilities</h2>
+      <p>Explore our modern classrooms, laboratories, and learning environment</p>
+    </div>
+
+    <!-- Navigation buttons -->
+    <button class="slide-btn prev">&#10094;</button>
+    <button class="slide-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+  <!-- Faculty & Staff -->
+  <section id="faculty">
+    <h2>Faculty & Staff</h2>
+    <p>Our team comprises experienced health professionals and educators dedicated to student success and community service.</p>
+  </section>
+
+<!-- Comments Section -->
+<section id="comments">
+  <h2>Comments & Feedback</h2>
+
+  <div class="comment-form">
+    <input type="text" id="commentName" placeholder="Your Name" required>
+    <textarea id="commentText" placeholder="Write your comment here..." required></textarea>
+    <button onclick="addComment()" class="btn-gold">Post Comment</button>
+  </div>
+
+  <div id="commentsList"></div>
+</section>
+
+  <!-- Contact Us -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Address: Renege Cell, Mazanga Ward, Kuru Town Council, Yumbe District, Uganda</p>
+    <p>P.o.Box 620294 Yumbe, UGANDA</p>
+    <p>Phone: +256 771373732</p>
+    <p>Email: info@alhassanhealth.org</p>
+    <p>Follow us on social media for updates:</p>
+    <ul>
+      <li>Facebook: Al-Hassan Health Sciences</li>
+      <li>Twitter: @AlHassanHealth</li>
+    </ul>
+  </section>
+
+</div>
+<section class="news-section">
+  <h2>Latest News & Events</h2>
+  <div id="newsContainer"></div>
+</section>
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <strong>Quick Links:</strong>
+      <a href="#home">Home</a> | 
+      <a href="#about">About Us</a> | 
+      <a href="#admissions">Admissions</a> | 
+      <a href="#programs">Programs</a> | 
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <strong>Contact:</strong>
+      +256 771373732 | info@alhassanhealth.org
+    </div>
+
+    <div class="footer-section social-icons">
+  <!-- Facebook -->
+  <a href="https://facebook.com/AlHassanHealth" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#d4af37" viewBox="0 0 24 24">
+      <path d="M22.676 0H1.326C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.676 0z"/>
+    </svg>
+  </a>
+
+  <!-- Twitter -->
+  <a href="https://twitter.com/AlHassanHealth" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#d4af37" viewBox="0 0 24 24">
+      <path d="M24 4.557a9.828 9.828 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.916 4.916 0 00-8.384 4.482A13.944 13.944 0 011.671 3.149a4.916 4.916 0 001.523 6.556 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 01-2.224.085 4.919 4.919 0 004.59 3.417 9.868 9.868 0 01-6.102 2.104c-.395 0-.788-.023-1.175-.068a13.945 13.945 0 007.557 2.213c9.054 0 14-7.496 14-13.986 0-.21-.004-.423-.014-.634A10.012 10.012 0 0024 4.557z"/>
+    </svg>
+  </a>
+</div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2026 Al-Hassan Institute of Health Sciences – Yumbe, Uganda. All rights reserved.
+  </div>
+</footer>
+<!-- JavaScript for Date/Time & Comments & Mobile Menu Toggle & Slideshow -->
+<script>
+  // DateTime update
+  function updateDateTime() {
+    const now = new Date();
+    const options = { 
+      year: 'numeric', month: 'long', day: 'numeric', 
+      hour: '2-digit', minute: '2-digit', second: '2-digit' 
+    };
+    document.getElementById('dateTimeDisplay').textContent =
+      now.toLocaleString(undefined, options);
+  }
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+
+  // Hamburger menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mainMenu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    const isExpanded = menu.classList.contains('show');
+    menuToggle.setAttribute('aria-expanded', isExpanded);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) &&
+        !menuToggle.contains(event.target) &&
+        window.innerWidth <= 768) {
+      menu.classList.remove('show');
+      menuToggle.setAttribute('aria-expanded', false);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      menu.classList.remove('show');
+      menu.style.display = 'flex';
+    } else {
+      menu.style.display = 'none';
+    }
+  });
+
+  if (window.innerWidth <= 768) {
+    menu.style.display = 'none';
+  }
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const mediaItems = [
+{ type: 'image', src: 'Logo 5.png' }, 
+  { type: 'image', src: 'campus Facility.jpg' }, 
+{ type: 'image', src: 'campus Facility2.jpg' },
+  { type: 'image', src: 'campus Facility3.jpg' },
+  { type: 'image', src: 'campus Facility8.jpg' },
+  { type: 'video', src: 'campus Facility4.mp4' },
+  { type: 'image', src: 'campus Facility7.jpg' },
+  { type: 'image', src: 'campus Facility9.jpg' },
+  { type: 'image', src: 'campus Facility10.jpg' },
+  { type: 'image', src: 'campus Facility11.jpg' },
+  { type: 'video', src: 'campus Facility5.mp4' },
+  { type: 'video', src: 'campus Facility6.mp4' }
+];
+
+const container = document.getElementById("slideshow");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let currentIndex = 0;
+let timeout;
+
+function showMedia(index){
+
+  if(!container) return;
+
+  clearTimeout(timeout);
+  container.innerHTML = "";
+
+  const item = mediaItems[index];
+
+  if(item.type === "image"){
+
+    const img = document.createElement("img");
+    img.src = item.src;
+
+    container.appendChild(img);
+
+    timeout = setTimeout(nextMedia, 4000);
+  }
+
+  else {
+
+    const video = document.createElement("video");
+
+    video.src = item.src;
+    video.autoplay = true;
+    video.muted = true;
+    video.playsInline = true;
+
+    container.appendChild(video);
+
+    video.onended = nextMedia;
+  }
+
+}
+
+function nextMedia(){
+  currentIndex = (currentIndex + 1) % mediaItems.length;
+  showMedia(currentIndex);
+}
+
+function prevMedia(){
+  currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+  showMedia(currentIndex);
+}
+
+nextBtn.addEventListener("click", nextMedia);
+prevBtn.addEventListener("click", prevMedia);
+
+showMedia(currentIndex);
+
+});
+
+</script>
+<script>
+// Load saved comments
+document.addEventListener("DOMContentLoaded", loadComments);
+
+function addComment(){
+
+  const name = document.getElementById("commentName").value.trim();
+  const text = document.getElementById("commentText").value.trim();
+
+  if(name === "" || text === ""){
+    alert("Please enter your name and comment");
+    return;
+  }
+
+  const comment = {
+    name: name,
+    text: text,
+    date: new Date().toLocaleString()
+  };
+
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  comments.unshift(comment);
+
+  localStorage.setItem("comments", JSON.stringify(comments));
+
+  document.getElementById("commentName").value = "";
+  document.getElementById("commentText").value = "";
+
+  loadComments();
+}
+
+function loadComments(){
+
+  const commentsList = document.getElementById("commentsList");
+  commentsList.innerHTML = "";
+
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  comments.forEach(comment => {
+
+    const div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+      <div class="comment-name">${comment.name}</div>
+      <div class="comment-date">${comment.date}</div>
+      <div class="comment-text">${comment.text}</div>
+    `;
+
+    commentsList.appendChild(div);
+
+  });
+}
+</script>
+<!-- Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const mediaItems = [
+    { type: 'image', src: 'Logo 5.png' },          // Logo first
+    { type: 'image', src: 'campus Facility2.jpg' },
+    { type: 'image', src: 'campus Facility3.jpg' },
+    { type: 'image', src: 'campus Facility8.jpg' },
+    { type: 'video', src: 'campus Facility4.mp4' },
+    { type: 'image', src: 'campus Facility7.jpg' },
+    { type: 'image', src: 'campus Facility9.jpg' },
+    { type: 'image', src: 'campus Facility10.jpg' },
+    { type: 'image', src: 'campus Facility11.jpg' },
+    { type: 'video', src: 'campus Facility5.mp4' },
+    { type: 'video', src: 'campus Facility6.mp4' }
+  ];
+
+  const container = document.getElementById("facilities-slideshow");
+  const nextBtn = container.parentElement.querySelector(".next");
+  const prevBtn = container.parentElement.querySelector(".prev");
+
+  let currentIndex = 0;
+  let timeout;
+
+  function showMedia(index) {
+    clearTimeout(timeout);
+    container.innerHTML = "";
+
+    const item = mediaItems[index];
+
+    if(item.type === "image") {
+      const img = document.createElement("img");
+      img.src = item.src;
+      container.appendChild(img);
+      timeout = setTimeout(nextMedia, 4000); // 4 sec per image
+    } else {
+      const video = document.createElement("video");
+      video.src = item.src;
+      video.autoplay = true;
+      video.muted = true;
+      video.playsInline = true;
+      container.appendChild(video);
+      video.onended = nextMedia;
+    }
+
+    // Keep arrows on top
+    container.appendChild(prevBtn);
+    container.appendChild(nextBtn);
+  }
+
+  function nextMedia() {
+    currentIndex = (currentIndex + 1) % mediaItems.length;
+    showMedia(currentIndex);
+  }
+
+  function prevMedia() {
+    currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+    showMedia(currentIndex);
+  }
+
+  nextBtn.addEventListener("click", nextMedia);
+  prevBtn.addEventListener("click", prevMedia);
+
+  // Start slideshow
+  showMedia(currentIndex);
+});
+</script>
+<script>
+const newsData = [
+  {
+    title: "2026 Admissions Open",
+    date: "March 1, 2026",
+    content: "Applications for Diploma and Certificate programs are now open."
+  },
+  {
+    title: "Annual Health Research Conference",
+    date: "April 15, 2026",
+    content: "Faculty and students will present innovative research projects."
+  },
+  {
+    title: "Community Medical Camp",
+    date: "May 10, 2026",
+    content: "Free health services offered to Yumbe community."
+  }
+];
+
+const container = document.getElementById("newsContainer");
+
+newsData.forEach(news => {
+  const card = document.createElement("div");
+  card.classList.add("news-card");
+  card.innerHTML = `
+    <h3>${news.title}</h3>
+    <small>${news.date}</small>
+    <p>${news.content}</p>
+  `;
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>

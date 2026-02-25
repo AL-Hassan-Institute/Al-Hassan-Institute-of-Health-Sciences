@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Apply – Al-Hassan Institute</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI', 'Helvetica Neue', sans-serif; background:#f9f9f9; color:#2c3e50; line-height:1.7; }
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top:0; z-index:1000;
+    display:flex; flex-direction:column; align-items:center;
+    justify-content:space-between;
+    background: linear-gradient(135deg,#0b5d2a,#0f7a38,#0b5d2a);
+    padding:15px 15px 10px 15px;
+    border-bottom:4px solid #d4af37;
+    color:white;
+}
+header::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: radial-gradient(rgba(212,175,55,0.08) 1px, transparent 1px);
+    background-size:40px 40px;
+    opacity:0.4;
+    pointer-events:none;
+    z-index:1000;
+}
+.header-logo { position:absolute; top:6px; left:0; width:100px; height:100px; border-radius:50%; background:white; padding:6px; box-shadow:0 0 15px rgba(212,175,55,0.6); z-index:1010; transition:0.3s; }
+.header-logo:hover { transform: scale(1.05); }
+header h1 { font-size:2.3em; font-weight:700; text-align:center; color:#ffffff; letter-spacing:1.5px; margin-bottom:5px; text-shadow:0 0 5px rgba(212,175,55,0.6),0 0 10px rgba(212,175,55,0.4),0 2px 4px rgba(0,0,0,0.4); animation:fadeSlideDown 1.2s ease;}
+header .slogan { font-size:1.2em; color:#d4af37; font-style:italic; letter-spacing:2px; margin-bottom:10px; text-shadow:0 0 8px rgba(212,175,55,0.6); }
+.top-right { position:absolute; top:0; right:12px; display:flex; flex-direction:column; align-items:flex-end; gap:2px; }
+.search-box input { border:none; outline:none; border-radius:20px 0 0 20px; padding:6px 10px; font-size:0.85em; }
+.search-box button { background:linear-gradient(135deg,#d4af37,#f1c40f); color:#0b5d2a; border:none; padding:6px 12px; border-radius:0 20px 20px 0; cursor:pointer; font-weight:bold; font-size:0.85em; transition:0.3s; }
+.search-box button:hover { background:linear-gradient(135deg,#f1c40f,#d4af37); transform:scale(1.05); }
+.datetime { font-size:0.55em; color:white; }
+
+/* ===== NAVIGATION ===== */
+nav { margin-top:12px; width:100%; }
+.menu { list-style:none; display:flex; justify-content:center; flex-wrap:wrap; gap:6px; }
+.menu li { position:relative; margin:0 10px; }
+.menu a { text-decoration:none; color:white; font-weight:500; padding:10px 8px; display:block; font-size:13px; border-radius:6px; transition:all 0.3s ease; }
+.menu a:hover { background:linear-gradient(135deg,#d4af37,#f1c40f); color:#0b5d2a; box-shadow:0 0 10px rgba(212,175,55,0.6);}
+.dropdown-content { display:none; position:absolute; top:100%; left:0; min-width:220px; background-color:#0b5d2a; border-radius:8px; flex-direction:column; padding:8px 0; z-index:1000; transition:all 0.3s ease-in-out; opacity:0; transform:translateY(10px);}
+.dropdown:hover>.dropdown-content { display:flex; flex-direction:column; opacity:1; transform:translateY(0);}
+.dropdown-content a { padding:10px 20px; color:#f1c40f; font-weight:500; font-size:0.95em; transition:all 0.25s ease;}
+.dropdown-content a:hover { background:rgba(212,175,55,0.1); color:#fff; transform:translateX(4px);}
+.mega-parent .mega-menu { padding:20px; border-radius:8px; position:absolute; top:100%; left:0; width:700px; background-color:rgba(11,93,42,0.95); border-top:4px solid #caa64d; box-shadow:0 20px 60px rgba(0,0,0,0.15); display:grid; grid-template-columns:repeat(3,1fr); gap:25px; opacity:0; visibility:hidden; transform:translateY(15px); transition:all 0.3s ease; z-index:999; }
+.mega-parent:hover .mega-menu { opacity:1; visibility:visible; transform:translateY(0);}
+.mega-column h4 { font-size:14px; font-weight:400; color:#d4af37; margin-bottom:8px; }
+.mega-column a { display:block; padding:6px 10px; font-size:12px; font-weight:300; color:#fff; text-decoration:none; border-radius:4px; transition:all 0.2s;}
+.mega-column a:hover { background:#0b5d2a; color:white; transform:translateX(5px);}
+.highlight-column { background:#f8fdf9; padding:8px; border-radius:6px; color:#0b5d2a; }
+
+/* ===== PAGE BANNER ===== */
+.page-banner { background:linear-gradient(135deg,#0b5d2a,#0f7a38,#0b5d2a); text-align:center; color:#d4af37; padding:60px 20px 40px 20px; box-shadow:0 4px 10px rgba(0,0,0,0.2); margin-bottom:25px;}
+.page-banner h1 { font-size:2.5em; text-shadow:0 0 10px rgba(212,175,55,0.6); }
+
+/* ===== APPLICATION STEPS ===== */
+.container { width:90%; max-width:900px; margin:0 auto 50px auto; }
+.step { background:white; padding:25px; margin-bottom:20px; border-left:5px solid #0b5d2a; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.2s; }
+.step:hover { transform:translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer { padding:10px 15px; font-size:0.85em; border-top:3px solid #d4af37; background:linear-gradient(135deg,#0b5d2a,#0f7a38,#0b5d2a); color:white; box-shadow:0 -2px 12px rgba(0,0,0,0.12);}
+.footer-content { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+.footer-section a { color:#d4af37; text-decoration:none; margin:0 4px; transition:color 0.3s; }
+.footer-section a:hover { color:#fff; text-shadow:0 0 5px #d4af37; }
+.footer-bottom { text-align:center; font-size:0.7em; border-top:1px solid rgba(212,175,55,0.5); padding-top:4px; color:#f5f5f5; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeSlideDown { from {opacity:0; transform:translateY(-25px);} to {opacity:1; transform:translateY(0);} }
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+    header h1 { font-size:1.7em; padding:0 60px; text-align:center; }
+    .header-logo { width:70px; height:70px; }
+    .top-right { position: static; align-items:center; margin-top:10px; }
+    .menu { flex-direction: column; display:none; }
+    .menu.show { display:flex; }
+}
+@media(max-width:480px){
+    header h1 { font-size:1.6em; }
+    .menu a { font-size:0.85em; padding:6px 8px; }
+    footer { font-size:0.7em; padding:8px 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="Logo.png" alt="Logo" class="header-logo">
+  <h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+  <div class="slogan">Discovering, Understanding, and Healing</div>
+  <div class="top-right">
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button>Search</button>
+    </div>
+    <div class="datetime" id="dateTimeDisplay"></div>
+  </div>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li class="dropdown">
+        <a href="#">About Us</a>
+        <ul class="dropdown-content">
+          <li><a href="#about">Overview</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#mission">Mission & Vision</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+        </ul>
+      </li>
+      <li class="dropdown mega-parent">
+        <a href="#" class="mega-title">Academic Programs ▾</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Diploma Programs</h4>
+            <a href="#">🩺 Diploma in Nursing</a>
+            <a href="#">👶 Diploma in Midwifery</a>
+          </div>
+          <div class="mega-column">
+            <h4>Certificate Programs</h4>
+            <a href="#">🩺 Certificate in Nursing</a>
+            <a href="#">👶 Certificate in Midwifery</a>
+          </div>
+          <div class="mega-column highlight-column">
+            <h4>Special Programs</h4>
+            <a href="#">📘 Short Courses</a>
+            <a href="#">🎓 Internship Programs</a>
+          </div>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Admissions</a>
+        <ul class="dropdown-content">
+          <li><a href="#">Requirements</a></li>
+          <li><a href="#">Apply Online</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Page Banner -->
+<div class="page-banner">
+  <h1>Application Process</h1>
+</div>
+
+<!-- Steps -->
+<div class="container">
+
+<div class="step">
+<h3>Step 1: Choose Program</h3>
+<p>Select a program that meets your career goals.</p>
+</div>
+
+<div class="step">
+<h3>Step 2: Complete Application Form</h3>
+<p>Fill online or physical application form.</p>
+</div>
+
+<div class="step">
+<h3>Step 3: Submit Documents</h3>
+<p>Provide academic and identification documents.</p>
+</div>
+
+<div class="step">
+<h3>Step 4: Pay Application Fee</h3>
+<p>Non-refundable application fee required.</p>
+</div>
+
+<div class="step">
+<h3>Step 5: Admission Decision</h3>
+<p>You will receive admission confirmation.</p>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">© 2026 Al-Hassan Institute</div>
+    <div class="footer-section">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Use</a>
+    </div>
+    <div class="footer-section social-icons">
+      <a href="#">🌐</a>
+      <a href="#">📘</a>
+      <a href="#">🐦</a>
+    </div>
+  </div>
+  <div class="footer-bottom">All rights reserved | Al-Hassan Institute – Yumbe, Uganda</div>
+</footer>
+
+<script>
+function updateDateTime() {
+    const now = new Date();
+    document.getElementById('dateTimeDisplay').textContent = now.toLocaleString();
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+
+</body>
+</html>

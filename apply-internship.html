@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apply for Internship | Al-Hassan Institute of Health Sciences – Yumbe</title>
+
+<style>
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to bottom,#f9f9f9,#eef2f3);
+  margin:0;
+  color:#2c3e50;
+}
+
+/* ===== HEADER ===== */
+header {
+  background:linear-gradient(135deg,#0b5d2a,#137a3a);
+  padding:25px 20px 15px 20px;
+  color:white;
+  text-align:center;
+  border-bottom:4px solid #d4af37;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin:0;
+  font-size:2.4em;
+}
+
+header p {
+  font-style:italic;
+  color:#f1c40f;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background:#0f7a38;
+  padding:12px;
+  text-align:center;
+}
+
+nav a {
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover {
+  color:#d4af37;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  margin-top:40px;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(0,0,0,0.08);
+}
+
+/* ===== TITLES ===== */
+h2 {
+  color:#0b5d2a;
+  border-bottom:3px solid #d4af37;
+  padding-bottom:8px;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  margin-bottom:20px;
+}
+
+label {
+  font-weight:bold;
+  display:block;
+  margin-bottom:6px;
+}
+
+input, select, textarea {
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color:#d4af37;
+  outline:none;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display:inline-block;
+  padding:14px 30px;
+  background:linear-gradient(135deg,#d4af37,#f1c40f);
+  color:#0b5d2a;
+  font-weight:bold;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.btn:hover {
+  box-shadow:0 10px 25px rgba(212,175,55,0.4);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background:linear-gradient(135deg,#0b5d2a,#0f7a38,#0b5d2a);
+  color:white;
+  padding:20px;
+  margin-top:50px;
+  text-align:center;
+  border-top:4px solid #d4af37;
+}
+
+.footer-bottom {
+  margin-top:10px;
+  font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+<header>
+
+<h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+
+<p>Discovering Understanding & Healing</p>
+
+</header>
+
+
+
+<!-- NAVIGATION -->
+<nav>
+
+<a href="index.html">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#admissions">Admissions</a>
+<a href="internship-programs.html">Internships</a>
+<a href="student-portal.html">Student Portal</a>
+<a href="index.html#contact">Contact</a>
+
+</nav>
+
+
+
+<!-- CONTENT -->
+<div class="container">
+
+<h2>Internship Application Form</h2>
+
+<p>
+Please complete the form below to apply for an internship at Al-Hassan Institute of Health Sciences. Ensure all information is accurate.
+</p>
+
+
+<form action="submit-internship.php" method="post">
+
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" name="fullname" required>
+</div>
+
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" name="email" required>
+</div>
+
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" name="phone" required>
+</div>
+
+
+<div class="form-group">
+<label>Gender</label>
+<select name="gender" required>
+
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+
+</select>
+</div>
+
+
+<div class="form-group">
+<label>Internship Program</label>
+<select name="program" required>
+
+<option value="">Select Program</option>
+<option>Hospital Internship</option>
+<option>Laboratory Internship</option>
+<option>Community Health Internship</option>
+<option>Research Internship</option>
+
+</select>
+</div>
+
+
+<div class="form-group">
+<label>Institution / School</label>
+<input type="text" name="institution" required>
+</div>
+
+
+<div class="form-group">
+<label>Course of Study</label>
+<input type="text" name="course" required>
+</div>
+
+
+<div class="form-group">
+<label>Internship Duration</label>
+<select name="duration" required>
+
+<option value="">Select Duration</option>
+<option>1 Month</option>
+<option>2 Months</option>
+<option>3 Months</option>
+<option>6 Months</option>
+
+</select>
+</div>
+
+
+<div class="form-group">
+<label>Motivation / Why do you want this internship?</label>
+<textarea name="motivation" rows="5" required></textarea>
+</div>
+
+
+<div class="form-group">
+<button class="btn">Submit Application</button>
+</div>
+
+
+</form>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+<footer>
+
+<div>
+Contact: +256 771373732 | info@alhassanhealth.org
+</div>
+
+<div class="footer-bottom">
+© 2026 Al-Hassan Institute of Health Sciences – Yumbe, Uganda
+</div>
+
+</footer>
+
+
+</body>
+</html>

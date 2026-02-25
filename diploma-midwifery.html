@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diploma in Midwifery | Al-Hassan Institute of Health Science – Yumbe</title>
+
+<style>
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom,#f9f9f9,#eef2f3);
+  margin:0;
+  color:#2c3e50;
+  line-height:1.7;
+  scroll-behavior: smooth;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg,#0b5d2a,#137a3a);
+  padding:25px 20px 15px 20px;
+  color:white;
+  text-align:center;
+  border-bottom:4px solid #d4af37;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+header h1 {
+  margin:0;
+  font-size:2.4em;
+}
+header p {
+  font-style:italic;
+  color:#f1c40f;
+  margin-top:5px;
+  font-size:1.2em;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background:#0f7a38;
+  padding:12px;
+  text-align:center;
+}
+nav a {
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+nav a:hover {
+  color:#d4af37;
+  text-decoration:underline;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width:1000px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  margin-top:40px;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(0,0,0,0.08);
+}
+
+/* ===== TITLES ===== */
+h2 {
+  color:#0b5d2a;
+  border-bottom:3px solid #d4af37;
+  padding-bottom:8px;
+  margin-bottom:25px;
+}
+h3 {
+  color:#137a3a;
+  margin-top:25px;
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+  background:#f8f8f8;
+  padding:20px;
+  border-left:6px solid #d4af37;
+  margin-bottom:30px;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+.info-box strong {
+  display:inline-block;
+  width:150px;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display:inline-block;
+  padding:12px 25px;
+  background:linear-gradient(135deg,#d4af37,#f1c40f);
+  color:#0b5d2a;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:25px;
+  transition:0.3s;
+}
+.btn:hover {
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(212,175,55,0.4);
+}
+
+/* ===== LISTS ===== */
+ul {
+  margin-left:20px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background:#0b5d2a;
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+  margin-top:50px;
+  border-top:4px solid #d4af37;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  header h1 { font-size:1.8em; }
+  header p { font-size:1em; }
+  .info-box strong { width:100%; display:block; margin-bottom:5px; }
+}
+/* Footer matching header theme */
+footer {
+  background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a); /* same gradient as header */
+  color: #ffffff;
+  font-size: 0.85em;
+  padding: 14px 20px;
+  border-top: 4px solid #d4af37; /* gold border like header bottom */
+  box-shadow: 0 -3px 15px rgba(0,0,0,0.15);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-section {
+  line-height: 1.3;
+}
+
+.footer-section a {
+  color: #d4af37; /* gold links for header consistency */
+  text-decoration: none;
+  margin: 0 4px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #d4af37;
+}
+
+.social-icons a img {
+  width: 20px;
+  height: 20px;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 4px #d4af37);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.75em;
+  border-top: 1px solid rgba(212,175,55,0.5);
+  padding-top: 6px;
+  color: #f5f5f5;
+}
+
+/* Mobile adjustments */
+@media(max-width: 480px){
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .social-icons a img {
+    width: 18px;
+    height: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+<p>Discovering Understanding & Healing</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#admissions">Admissions</a>
+<a href="downloads.html">Downloads</a>
+<a href="staff.html">Staff</a>
+<a href="student-portal.html">Student Portal</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<h2>Diploma in Midwifery</h2>
+
+<div class="info-box">
+<strong>Qualification:</strong> Diploma in Midwifery<br>
+<strong>Duration:</strong> 2 Years<br>
+<strong>Study Mode:</strong> Full-time<br>
+<strong>Award:</strong> Recognized Professional Qualification
+</div>
+
+<h3>Program Overview</h3>
+<p>
+The Diploma in Midwifery equips students with the knowledge and practical skills necessary to provide safe maternal and newborn care. Graduates will gain experience in antenatal, intrapartum, and postnatal care, along with community health support for mothers and infants.
+</p>
+
+<h3>Career Opportunities</h3>
+<ul>
+<li>Professional Midwife in hospitals and clinics</li>
+<li>Community Health Midwife</li>
+<li>Maternal and Child Health Officer</li>
+<li>NGO or government maternal health programs</li>
+</ul>
+
+<h3>Entry Requirements</h3>
+<ul>
+<li>Uganda Certificate of Education (UCE) or equivalent</li>
+<li>Passes in Biology and Chemistry</li>
+<li>Demonstrated commitment to maternal and child health</li>
+</ul>
+
+<h3>Course Content</h3>
+<ul>
+<li>Anatomy and Physiology for Midwifery</li>
+<li>Maternal Health and Obstetrics</li>
+<li>Newborn Care and Pediatrics</li>
+<li>Community Midwifery and Health Promotion</li>
+<li>Clinical Placements and Patient Care</li>
+<li>Professional Ethics in Midwifery</li>
+</ul>
+
+<h3>Downloads</h3>
+<p>For detailed program information, download our <a href="downloads.html" class="btn">Prospectus PDF</a></p>
+
+<h3>Apply Online</h3>
+<p>Ready to start your journey? Apply now using our online application form:</p>
+<a href="apply.php" class="btn">Apply Now</a>
+
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <strong>Quick Links:</strong>
+      <a href="#home">Home</a> | 
+      <a href="#about">About Us</a> | 
+      <a href="#admissions">Admissions</a> | 
+      <a href="#programs">Programs</a> | 
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <strong>Contact:</strong>
+      +256 771373732 | info@alhassanhealth.org
+    </div>
+
+    <div class="footer-section social-icons">
+      <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2026 Al-Hassan Institute of Health Sciences – Yumbe, Uganda. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

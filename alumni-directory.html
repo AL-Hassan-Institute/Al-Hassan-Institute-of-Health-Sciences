@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumni Directory – Al-Hassan Institute of Health Sciences</title>
+
+<style>
+/* ===== SAME GLOBAL STYLES AS REGISTER PAGE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  background: linear-gradient(to bottom, #f9f9f9, #eef2f3);
+  color: #2c3e50;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a);
+  padding: 15px;
+  border-bottom: 4px solid #d4af37;
+  text-align: center;
+  color: white;
+}
+
+.header-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: white;
+  padding: 6px;
+  border: 2px solid #d4af37;
+}
+
+nav { margin-top: 10px; }
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu li { margin: 0 10px; }
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.menu a:hover {
+  background: linear-gradient(135deg,#d4af37,#f1c40f);
+  color: #0b5d2a;
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08),
+              0 0 0 1px rgba(212,175,55,0.15);
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #0b5d2a;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(to right, #d4af37, transparent);
+}
+
+.directory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.directory-table th, .directory-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.directory-table th {
+  background: #0b5d2a;
+  color: white;
+}
+
+.directory-table tr:hover {
+  background: #f9f9f9;
+}
+
+footer {
+  padding: 12px;
+  background: linear-gradient(135deg, #0b5d2a, #0f7a38, #0b5d2a);
+  color: white;
+  text-align: center;
+  border-top: 3px solid #d4af37;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="Logo 5.png" class="header-logo">
+<h1>Al-Hassan Institute of Health Sciences – Yumbe, Uganda</h1>
+
+<nav>
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#programs">Programs</a></li>
+<li><a href="index.html#admissions">Admissions</a></li>
+<li><a href="latest-news.html">News</a></li>
+<li><a href="alumni-register.html">Alumni</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="container">
+<h2>Alumni Directory</h2>
+
+<table class="directory-table">
+<tr>
+<th>Name</th>
+<th>Program</th>
+<th>Graduation Year</th>
+<th>Workplace</th>
+</tr>
+
+<tr>
+<td>Ahmed Hassan</td>
+<td>Diploma in Nursing</td>
+<td>2020</td>
+<td>Yumbe District Hospital</td>
+</tr>
+
+<tr>
+<td>Sarah Ibrahim</td>
+<td>Diploma in Midwifery</td>
+<td>2021</td>
+<td>WHO Uganda</td>
+</tr>
+
+<tr>
+<td>Abdullah Musa</td>
+<td>Certificate in Laboratory Technology</td>
+<td>2019</td>
+<td>Arua Regional Referral Hospital</td>
+</tr>
+</table>
+</div>
+
+<footer>
+© 2026 Al-Hassan Institute of Health Sciences – Yumbe, Uganda  
+All Rights Reserved
+</footer>
+
+</body>
+</html>
